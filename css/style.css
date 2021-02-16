@@ -1,0 +1,197 @@
+*{margin: 0;padding: 0;box-sizing: border-box;font-family: sans-serif;}
+body{background-color: #ede7f6;}
+.main-container{
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    justify-content: center;
+}
+.form{
+    background-image: url(../assets/form-bg.png);
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #6b6b6b;
+    background-size: 100%;
+}
+#editForm{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.form-container,.notes-container{
+    width: 45%;
+    max-width: 100%;
+    position: relative;
+}
+.form-field{
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+.form-field:last-child{
+    margin-bottom: 0;
+}
+.form-field button::placeholder,input::placeholder,textarea::placeholder{
+    color: #fff;
+}
+.form-field button,input,textarea{
+    border: 2px solid #fff;
+    color: #fff;
+    outline: 0;
+    width: 100%;
+    padding: 10px 5px;
+    background-color: transparent;
+    font-size: 15px;
+    font-family: sans-serif;
+    border-radius: 4px;
+}
+.form-field button{
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.form-field button:hover{
+    background-color: #fff;
+    color: #444;
+    font-weight: 600;
+}
+.form-heading{
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.edit-form-field{
+    display: flex;
+    justify-content: space-between;
+}
+.edit-form-field button{
+    width: 48%;
+}
+.form-field textarea{
+    min-height: 120px;   
+    overflow-y: auto;
+    overflow-x: hidden;
+    resize: none;
+}
+.form-field input.error:focus,.form-field textarea.error:focus{
+    border: 2px solid #ff3838;
+}
+.form-field textarea::-webkit-scrollbar{width: 6px;}
+.form-field textarea::-webkit-scrollbar-track{background-color: #444;}
+.form-field textarea::-webkit-scrollbar-thumb{background-color: #fff;}
+.notes{
+    background-color: #fff;
+    margin: 20px 0 0;
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 5px;
+    max-height: 306px;
+    overflow: hidden auto;
+}
+.notes::-webkit-scrollbar{
+    width: 8px;
+}
+.notes::-webkit-scrollbar-track{
+    background-color: #f4f4f4;
+}
+.notes::-webkit-scrollbar-thumb{
+    background-color: #ccc;
+}
+.note{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+}
+.note:last-child{
+    border: 0;
+}
+.note svg{
+    height: auto;
+}
+.note-left{
+    padding: 0 15px 0 10px;
+}
+.note-left svg{
+    width: 40px;
+}
+.note-middle{
+    flex: 1;
+}
+.note-middle p{
+    font-size: 14px;
+    word-break: break-word;
+}
+.note-middle p button{
+    color: blue;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    font-size: 14px;
+    margin-left: 3px;
+}
+.note-middle p button:hover{
+    border-bottom: 1px solid blue;
+}
+.note-middle h4{
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.note-right{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+.note-right svg:first-child{
+    margin-bottom: 2px;
+}
+.note-right svg{
+    width: 35px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all .2s ease-in-out;
+}
+.note-right svg:first-child:hover{
+    background-color: #bbdefb;
+}
+.note-right svg:last-child:hover{
+    background-color: #ffb7b7;
+}
+@media(max-width: 767px){
+    .form-container, .notes-container {
+        width: 75%;
+        max-width: 100%;
+    }
+}
+@media(max-width: 480px){
+    .main-container{
+        padding: 20px 15px;
+    }
+    .note-middle h4{
+        font-size: 14px;
+    }
+    .note-middle p{
+        font-size: 13px;
+    }
+    .form-field button, input, textarea{
+        font-size: 13px;
+    }
+    .form-container, .notes-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
